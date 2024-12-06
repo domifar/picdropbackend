@@ -1,17 +1,12 @@
-import { Controller, Get, Param } from '@nestjs/common';
-import { VoucherService } from './vouchers.service';
+import { Controller, Get } from '@nestjs/common';
+import { VouchersService } from './vouchers.service';
 
 @Controller('vouchers')
-export class VoucherController {
-  constructor(private readonly vouchersService: VoucherService) {}
+export class VouchersController {
+  constructor(private readonly vouchersService: VouchersService) {}
 
   @Get()
   findAll() {
     return this.vouchersService.findAll();
   }
-
-  // @Get(':Id')
-  // findOne(@Param('Id') id: string) {
-  //   return this.usersService.findOne(+id);
-  // }
 }

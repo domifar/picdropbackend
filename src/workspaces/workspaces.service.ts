@@ -1,16 +1,16 @@
 // src/users/users.service.ts
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Vouchers } from './entities/vouchers.entity';
+import { Workspaces } from './entities/workspaces.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
-export class VouchersService {
+export class WorkspacesService {
   constructor(
-    @InjectRepository(Vouchers) private userRepository: Repository<Vouchers>,
+    @InjectRepository(Workspaces) private userRepository: Repository<Workspaces>,
   ) {}
 
-  async findAll(): Promise<Vouchers[]> {
+  async findAll(): Promise<Workspaces[]> {
     return await this.userRepository.find();
   }
 }

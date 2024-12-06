@@ -4,7 +4,8 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
-import { UsersModule } from './vouchers/vouchers.module';
+import { VouchersModule } from './vouchers/vouchers.module';
+import { WorkspacesModule } from './workspaces/workspaces.module'
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
@@ -13,7 +14,9 @@ import { ConfigModule } from '@nestjs/config';
       isGlobal: true,
     }),
     DatabaseModule,
-    UsersModule,
+    VouchersModule,
+    WorkspacesModule,
+    
   ],
   controllers: [AppController],
   providers: [AppService],
