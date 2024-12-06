@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Vouchers } from 'src/vouchers/entities/vouchers.entity';
 import { Workspaces } from 'src/workspaces/entities/workspaces.entity';
+import { SubmissionItems } from 'src/SubmissionItems/entities/SubmissionItems.entity';
 
 @Module({
   imports: [
@@ -17,7 +18,7 @@ import { Workspaces } from 'src/workspaces/entities/workspaces.entity';
         username: configService.get('POSTGRES_USER'),
         password: configService.get('POSTGRES_PASSWORD'),
         database: configService.get('POSTGRES_DB'),
-        entities: [Vouchers, Workspaces],
+        entities: [Vouchers, Workspaces, SubmissionItems],
         synchronize: false,
       }),
       inject: [ConfigService],
