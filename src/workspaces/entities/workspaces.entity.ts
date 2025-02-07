@@ -1,10 +1,11 @@
 /* eslint-disable prettier/prettier */
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
+//Alle Attribute von Workspaces
 @Entity("Workspaces")
 export class Workspaces {
   @PrimaryGeneratedColumn() // Auto-incremented primary key
-  Id : number;
+  Id : string;
   @Column()
   Name: string;
 

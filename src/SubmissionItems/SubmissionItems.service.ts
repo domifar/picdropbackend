@@ -10,7 +10,16 @@ export class SubmissionItemsService {
     @InjectRepository(SubmissionItems) private userRepository: Repository<SubmissionItems>,
   ) {}
 
+  //alle SubmissionItems aus der Datenbank zurückgeben
   async findAll(): Promise<SubmissionItems[]> {
     return await this.userRepository.find();
+  }
+
+  async findOne(id: string): Promise<SubmissionItems> {
+    const submission = await this.userRepository.findOne({ where: { Id: id } });
+    if (!submission) {
+      throw new NotFoundException(`Workspace with id ${id} not found`);
+    }
+    return submission;
   }
 }

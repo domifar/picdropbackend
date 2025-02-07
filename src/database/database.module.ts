@@ -6,6 +6,7 @@ import { Vouchers } from 'src/vouchers/entities/vouchers.entity';
 import { Workspaces } from 'src/workspaces/entities/workspaces.entity';
 import { SubmissionItems } from 'src/SubmissionItems/entities/SubmissionItems.entity';
 
+//Datenbankkonfiguration aus der .env Datei
 @Module({
   imports: [
     ConfigModule.forRoot(),

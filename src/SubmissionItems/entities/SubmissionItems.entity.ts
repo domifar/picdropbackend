@@ -1,10 +1,11 @@
 /* eslint-disable prettier/prettier */
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
+//Attribute von SubmissionItems
 @Entity("SubmissionItems")
 export class SubmissionItems {
   @PrimaryGeneratedColumn() // Auto-incremented primary key
-  Id : number;
+  Id : string;
 
   @Column()
   SubmissionId: string;

@@ -10,7 +10,16 @@ export class VouchersService {
     @InjectRepository(Vouchers) private userRepository: Repository<Vouchers>,
   ) {}
 
+  //alle vouchers aus der Datenbank zurückgeben
   async findAll(): Promise<Vouchers[]> {
     return await this.userRepository.find();
+  }
+
+  async findOne(id: string): Promise<Vouchers> {
+    const vouchers = await this.userRepository.findOne({ where: { Id: id } });
+    if (!vouchers) {
+      throw new NotFoundException(`Workspace with id ${id} not found`);
+    }
+    return vouchers;
   }
 }

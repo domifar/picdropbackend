@@ -6,7 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { SubmissionItems } from './entities/SubmissionItems.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([SubmissionItems])], // add this line
+  imports: [TypeOrmModule.forFeature([SubmissionItems])],
   controllers: [SubmissionItemsController],
   providers: [SubmissionItemsService],
 })
