@@ -70,7 +70,7 @@ export class Workspaces {
   StripeSessionId : number;
 
   @Column()
-  SubscriptionStatus : boolean;
+  SubscriptionStatus : string;
 
   @Column()
   SubscriptionEndDate : Date;
